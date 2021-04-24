@@ -6,7 +6,7 @@ import {Link, useHistory} from 'react-router-native'
 const db = firebase.firestore();
 
 
-export default function AddBreakfast(props) {
+export default function AddAssistance(props) {
   
   const [place, setPlace] = useState("")
   const [description, setDescription] = useState("")
@@ -14,25 +14,25 @@ export default function AddBreakfast(props) {
   const [longtitude, setLongtitude] = useState("")
 
 
-  const addBreackFest = () => {
+  const addAssistance = () => {
     if (db) {
-      db.collection('breackFest').add({
+      db.collection('assistance').add({
           place: Number(place),
           description: description,
           latitude: latitude,
           longtitude: longtitude,
       })
-       props.history.push('/findBreakfest')
+       props.history.push('/findAssistance')
   }
   }
 
 
 
   return (
-        <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, height: '100%'}}>
-       <Text style={styles.title}>Ajouté un aide place</Text>
+    <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, height: '100%'}}>
+       <Text style={styles.title}>Ajouté un aide futors</Text>
 
-       <View style={{marginRight: 5}}>
+       <View >
        <Text>Place :</Text>
        <TextInput
        placeholder="Place"
@@ -69,7 +69,7 @@ export default function AddBreakfast(props) {
      
     <TouchableOpacity
      style={styles.someStyles}
-     onPress={() => { addBreackFest() }}>
+     onPress={() => { addAssistance() }}>
      <Text style={{color: 'white'}} >Add Breakfast</Text>
    </TouchableOpacity>
 
@@ -81,23 +81,23 @@ export default function AddBreakfast(props) {
 
 
 const styles = StyleSheet.create({
-  input: {
-      width : 400,
-      padding: 10,
-      borderRadius:2,
-      marginBottom: 5,
-      borderWidth : 2,
-      borderRadius: 5,
-  },
-  someStyles: {
-    backgroundColor: '#2488EC',
-    paddingVertical: 12,
-    alignItems: 'center', 
-    borderRadius: 4
-  },
- title: {
-   fontSize: 30,
-   paddingVertical: 20
-   
- }
+    input: {
+        width : 400,
+        padding: 10,
+        borderRadius:2,
+        marginBottom: 5,
+        borderWidth : 2,
+        borderRadius: 5,
+    },
+    someStyles: {
+      backgroundColor: '#2488EC',
+      paddingVertical: 12,
+      alignItems: 'center', 
+      borderRadius: 4
+    },
+   title: {
+     fontSize: 30,
+     paddingVertical: 20
+     
+   }
 });
