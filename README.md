@@ -1,7 +1,7 @@
-# ramadan_mubarak_app
+# ramadan react app
 
-#npm i
-<br>
-#npm start
-<br>
-good luck ^^
+>npm i
+
+>npm start
+
+
